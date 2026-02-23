@@ -1,0 +1,128 @@
+:root {
+    --bg-color: #fdfcf0;
+    --primary-pastel: #ffb7b2;
+    --secondary-pastel: #b2e2f2;
+    --accent-pastel: #ffdac1;
+    --text-color: #6d6875;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    z-index: 10;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #e5989b;
+}
+
+.title span {
+    font-size: 3.5rem;
+    color: #b5838d;
+}
+
+.age-badge {
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--primary-pastel);
+    text-shadow: 4px 4px 0px var(--accent-pastel);
+    animation: bounce 2s infinite;
+}
+
+.illustration {
+    font-size: 4rem;
+    margin: 20px 0;
+}
+
+.balloons {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Button Styling */
+.main-btn {
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    background-color: var(--secondary-pastel);
+    border: none;
+    border-radius: 50px;
+    color: #555;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.main-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-pastel);
+}
+
+/* Modal Pop-up */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 40px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* Kembang Api Sederhana */
+.firework {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: var(--primary-pastel);
+    border-radius: 50%;
+    animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(20); opacity: 0; }
+}
